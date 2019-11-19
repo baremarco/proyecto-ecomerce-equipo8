@@ -47,6 +47,51 @@ h1{
    background: #000;
    display: flex;
 }
+.section-login{
+   
+   margin: 0;
+}   
+   
+   .login{
+      background-color: #1F6CB0;
+      margin: 0;
+      padding: 20px 0 0 0;
+      color: #fff;
+      margin: 0 auto;
+      height: 50vh;
+   }
+   .login h3{
+      width: 70%;
+      margin: 0 auto 50px;
+      text-transform: uppercase;
+   }
+   .login form *{
+      display: block;
+
+   }
+   .login form{
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 0;
+   }
+   .login form input{
+      width: 98%;
+      padding-right: 0;
+   }
+   .login form button{
+      margin: 0;
+      margin-left: auto;
+      width: 100px;
+      background-color: #51423A;
+      color: #fff;
+      text-transform: uppercase;
+
+   }
+   .login h3{
+     background-color: #FFD460;
+   }
+   
+   
 .articulos{
    background-color: #4e4e6a;
    flex:2 1 auto;
@@ -56,7 +101,6 @@ h1{
 .article{
    background-color: #1f6cb0;
    flex: 1 1 40%;
-   ​
    ​
 }
 .navegacion{
