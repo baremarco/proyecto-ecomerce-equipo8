@@ -1,58 +1,98 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-	<meta charset="utf-8">
-	<title>Home</title>
-	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale1.0">
- 
-	<link rel="stylesheet" type="text/css" href="css/style1.css">
-	<link rel="stylesheet" type="text/css" href="css/register.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://kit.fontawesome.com/20d3506334.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+    
+    <title>InterTienda</title>
 </head>
 <body>
-	<div class="padre">
-		<header class="header">
-			<div class="menu">
-				<div class="logo"></div>
-				<div class="nav"></div>
-				<div class="social"></div>
-			</div>
-			<div class="texto-principal">
-				<h1></h1>
-			</div>
-		</header>
-		<section class="section">
-			<div class="container">
-				<h1>REGISTRO DE USUARIO</h1>
-				<form>
-				  <ul class="flex-outer">
-					<li>
-					  <label for="nombre">Nombre</label>
-					  <input type="text" id="nombre" placeholder="Escriba su nombre aquí">
-					</li>
-					<li>
-					  <label for="apellido">Apellido</label>
-					  <input type="text" id="apellido" placeholder="Escriba su apellido aquí">
-					</li>
-					<li>
-					  <label for="email">Email</label>
-					  <input type="email" id="email" placeholder="Escriba su Email aquí">
-					</li>
-					<li>
-					  <label for="cel">Celular</label>
-					  <input type="tel" id="cel" placeholder="Escriba su celular aquí">
-					</li>
-					<li>
-					  <button type="submit">Registrar</button>
-					</li>
-				  </ul>
-				</form>
-			  </div>
-			
-		</section>
-		<footer clases="footer">
-			<nav class="pie"></nav>
-		</footer>
-	</div>
+
+    <div class="contenedor">
+        <header class="header">
+            <div class="menu">
+            
+
+            <div class="logo">
+                <a href="index.html"><img src="/img/logo.png" alt=""></i></a>
+            </div>
+            
+            <nav class="nav">
+                <ul>
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="#">Registro</a>
+                    </li>
+                    <li>
+                        <a href="#">Login</a>
+                    </li>
+                    <li>
+                        <a href="#contacto">Contacto</a>
+                    </li>
+                    <li>
+                        <a href="#">Perfil</a>
+                    </li>
+                    <li>
+                        <a href="#">FAQ</a>
+                    </li>
+                </ul>
+
+            </nav>
+            
+                <div class="social">
+                <a href=""><i class="fab fa-instagram"style="color:white"></i></i></a>    
+                <a href=""><i class="fab fa-facebook-f"style="color: white"></i></a>
+                <a href=""><i class="fab fa-youtube"style="color: white"></i></i></a>  
+                <a href=""><i class="fab fa-twitter"style="color: white"></i></a>  
+                <a href=""><i class="fas fa-shopping-cart"style="color:white"></i></a>
+                </div>
+            </div>                     
+        </header>
+
+        <section class="texto">
+            <p>
+                Bienvenidos a la Círculo Privado de Compra  - Venta de Artículos.
+Tenemos algo que vender, quizás mi compañero de oficina o de la oficina de al lado está buscando justo lo mismo, sin gastos de envíos ni comisiones. Conociendo a quien nos lo vende así nace InterTienda, un círculo de transacciones de productos dentro de tu ámbito de trabajo.
+¿Cómo acceder? Sencillo, te registrás y un administrador valida que pertenecés a la empresa, luego de esto te llega el email y ya puedes publicar y ver los productos.
+            </p> 
+        </section>
+
+        <section class="articulos">
+            <article class="iphone">
+                <a href="#"><img src="img/tecnologia.png" alt=""></a>
+                <h2>Tecnologia</h2>
+
+            </article>
+            
+            <article class="macbook">
+                <a href="#"><img src="img/ropa.jpg" alt=""></a>
+                <h2>Vestimenta</h2>
+
+            </article>
+            
+            <article class="ipad">
+                <a href="#"><img src="img/ipad.jpg" alt=""></a>
+                <h2>Ipad</h2>
+            </article>
+
+            <article class="contacto" id="contacto">
+                <h2>Contacto</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse labore amet distinctio ratione illum molestias odit a illo blanditiis accusamus alias, modi, fugit quis ab. Exercitationem deleniti deserunt omnis incidunt!</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio laborum voluptatum voluptatem nesciunt perspiciatis, suscipit dolores porro magni impedit odit eveniet eaque maxime, aliquam eum enim laudantium reiciendis sequi quaerat.</p>
+            </article>
+
+        </section>
+
+        <footer class="footer">
+            <p>Copyright © 2019 Apple Argentina.</p>
+            
+
+
+    </div> 
 </body>
 </html>
