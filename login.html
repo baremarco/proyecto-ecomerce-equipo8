@@ -1,39 +1,164 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<title>Login</title>
-	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale1.0">
-	<link rel="stylesheet" type="text/css" href="css/style1.css">
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+   <link rel="stylesheet" href="./css/style.css">
+   <script src="https://kit.fontawesome.com/20d3506334.js" crossorigin="anonymous"></script>
+
+   <title>Login</title>
 </head>
+
 <body>
-	<div class="padre">
-		<header class="header">
-			<div class="menu">
-				<div class="logo"></div>
-				<div class="nav"></div>
-				<div class="social"></div>
-			</div>
-			<div class="texto-principal">
-				<h1></h1>
+   <!-- NAV BAR -->
+   <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+         <a href="index.html"><img class="navbar-brand" src="/img/logo-198x66.png" alt="logo" height="60px"></a>         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse " id="navbarText">
+            <ul class="navbar-nav ml-auto ">
+               <li class="nav-item active ">
+                  <a class="nav-link" href="index.html">PRINCIPAL</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="#">INGRESAR</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="register.html">REGISTRAR</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="faq.html">F.A.Q.</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="contact.html">CONTACTO</a>
+               </li>
+               <li>
+                  <a class="nav-link" href="perfil.html"><i class="fas fa-user-edit"></i></a>
+               </li>
+               <li>
+                  <a class="nav-link" href="contact.html"><i class="fas fa-shopping-cart"></i></a>
+                  
+               </li>
+            </ul>
          </div>
-      </header>
-      <section class="section-login">
-         <article class="login">
+      </nav>
+   </header>
+   <!-- NAV BAR -->
+
+   <div class="container mb-5">
+      <form>
+         <div class="form-group row">
+            <div class="col-sm-11 col-md-11 col-lg-11 col-form-label">
+               <h2>Inicie Sesión</h2>
+            </div>
+            <label for="staticEmail" class="col-sm-2 col-form-label mt-10">Email</label>
+            <div class="col-sm-8 col-md-8">
+               <input type="email" class="form-control" id="staticEmail" placeholder="correo@ejemplo.com">
+            </div>
+         </div>
+         <div class="form-group row">
+            <label for="inputPassword" class="col-sm-2 col-form-label">Contraseña</label>
+            <div class="col-sm-8 col-md-8">
+               <input type="password" class="form-control" id="inputPassword" placeholder="Escriba su contraseña aquí">
+            </div>
+         </div>
+         <button type="button" class="btn btn-secondary mx-5 col-sm-2 col-md-1 col-lg-1  mt-5">Iniciar</button>
+      </form>
+   </div>
+  
+<!-- FOOTER -->
+<footer class="page-footer font-small blue pt-4">
+      ​
+      <!-- Footer Links -->
+      <div class="container-fluid text-center text-md-left">
+         
+         <!-- Grid row -->
+         <div class="row">
             
+            <!-- Grid column -->
+            <div class="col-md-6 mt-md-0 mt-3">
+               
+               <!-- Content -->
+               <h5 class="text-uppercase">intertienda</h5>
+               
+            </div>
+            <!-- Grid column -->
             
-            <h3>login de usuarios</h3>
-            <form name="login-form" id="login-form">
-                  <input type="email" name="email" id="email" placeholder="Username or Email" required>
-                  <input type="password" name="password" id="password" placeholder="Password" required>
-                  <button id="login-button">login</button>
-            </form>
+            <hr class="clearfix w-100 d-md-none pb-3">
             
-         </article>
-      </section>
-      <footer class="footer">
-         <nav class="pie"></nav>
-      </footer>
-	</div>
+            <!-- Grid column -->
+            <div class="col-md-3 mb-md-0 mb-3">
+               
+               <!-- Links -->
+               <h5 class="text-uppercase">mapa sitio</h5>
+               
+               <ul class="list-unstyled">
+                  <li>
+                     <a href="#">Home</a>
+                  </li>
+                  <li>
+                     <a href="#!">FAQ</a>
+                  </li>
+                  <li>
+                     <a href="#!">Login</a>
+                  </li>
+                  <li>
+                     <a href="#!">Registro</a>
+                  </li>
+               </ul>
+               
+            </div>
+            <!-- Grid column -->
+            
+            <!-- Grid column -->
+            <div class="col-md-3 mb-md-0 mb-3">
+               
+               <!-- Links -->
+               <h5 class="text-uppercase">Contacto</h5>
+               
+               <ul class="list-unstyled">
+                  <li>
+                     <a href="#!"><i class="fab fa-facebook-f" ></i></a>
+                  </li>
+                  <li> 
+                     <a href="#!"><i class="fab fa-instagram" ></i></a>
+                  </li>
+                  <li>
+                     <i class="far fa-envelope" > <a href="mailto:mitienda@gmail.com">mitienda@gmail.com</a></i>
+                     ​
+                  </li>
+                  <li>
+                     <i class="fas fa-phone" > 11-0123-4561</i>
+                  </li>
+               </ul>
+               
+            </div>
+            <!-- Grid column -->
+            
+         </div>
+         <!-- Grid row -->
+         
+      </div>
+      <!-- Footer Links -->
+      
+      <!-- Copyright -->
+      <div class="footer-copyright text-center py-3">© 2019 Copyright Equipo 8 Digital House:
+         
+      </div>
+      <!-- Copyright -->
+      
+   </footer>
+   <!-- FOOTER -->
+
+   <!-- Optional JavaScript -->
+   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
+
 </html>
