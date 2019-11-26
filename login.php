@@ -1,14 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" class="h-100">
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-   <!-- Bootstrap CSS -->
-   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-   <link rel="stylesheet" href="./css/style.css">
-   <script src="https://kit.fontawesome.com/20d3506334.js" crossorigin="anonymous"></script>
 
+<?php include("head.php"); ?>
    <title>Login</title>
 </head>
 
@@ -38,90 +32,10 @@
       </form>
    </div>
   
-<!-- FOOTER -->
-<footer class="page-footer font-small blue mt-auto">
-      ​
-      <!-- Footer Links -->
-      <div class="container-fluid text-center text-md-left">
-         
-         <!-- Grid row -->
-         <div class="row">
-            
-            <!-- Grid column -->
-            <div class="col-md-6 mt-md-0 mt-3">
-               
-               <!-- Content -->
-               <h5 class="text-uppercase">intertienda</h5>
-               
-            </div>
-            <!-- Grid column -->
-            
-            <hr class="clearfix w-100 d-md-none pb-3">
-            
-            <!-- Grid column -->
-            <div class="col-md-3 mb-md-0 mb-3">
-               
-               <!-- Links -->
-               <h5 class="text-uppercase">mapa sitio</h5>
-               
-               <ul class="list-unstyled">
-                  <li>
-                     <a href="#">Home</a>
-                  </li>
-                  <li>
-                     <a href="#!">FAQ</a>
-                  </li>
-                  <li>
-                     <a href="#!">Login</a>
-                  </li>
-                  <li>
-                     <a href="#!">Registro</a>
-                  </li>
-               </ul>
-               
-            </div>
-            <!-- Grid column -->
-            
-            <!-- Grid column -->
-            <div class="col-md-3 mb-md-0 mb-3">
-               
-               <!-- Links -->
-               <h5 class="text-uppercase">Contacto</h5>
-               
-               <ul class="list-unstyled">
-                  <li>
-                     <a href="#!"><i class="fab fa-facebook-f" ></i></a>
-                  </li>
-                  <li> 
-                     <a href="#!"><i class="fab fa-instagram" ></i></a>
-                  </li>
-                  <li>
-                     <i class="far fa-envelope" > <a href="mailto:mitienda@gmail.com">mitienda@gmail.com</a></i>
-                     ​
-                  </li>
-                  <li>
-                     <i class="fas fa-phone" > 11-0123-4561</i>
-                  </li>
-               </ul>
-               
-            </div>
-            <!-- Grid column -->
-            
-         </div>
-         <!-- Grid row -->
-         
-      </div>
-      <!-- Footer Links -->
-      
-      <!-- Copyright -->
-      <div class="footer-copyright text-center py-3">© 2019 Copyright Equipo 8 Digital House:
-         
-      </div>
-      <!-- Copyright -->
-      
-   </footer>
-   <!-- FOOTER -->
 
+   <!-- FOOTER -->
+   <?php include("footer.php"); ?>
+    <!-- FOOTER -->  
    <!-- Optional JavaScript -->
    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
