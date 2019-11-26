@@ -13,43 +13,7 @@
     <title>Perfil</title>
 </head>
 <body>
-      <header>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-              <a href="index.html"><img class="navbar-brand" src="img/logo-198x66.png" alt="logo" height="60px"></a>
-               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-               </button>
-               <div class="collapse navbar-collapse " id="navbarText">
-                  <ul class="navbar-nav ml-auto ">
-                     <li class="nav-item active ">
-                        <a class="nav-link" href="index.html">PRINCIPAL</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="login.html">INGRESAR</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="register.html">REGISTRAR</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="faq.html">F.A.Q.</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="contact.html">CONTACTO</a>
-                     </li>
-                     <li>
-                        <a class="nav-link" href="perfil.html"><i class="fas fa-user-edit"></i></a>
-                     </li>
-                     <li>
-                        <a class="nav-link" href="carrito.html"><i class="fas fa-shopping-cart"></i></a>
-                        
-                     </li>
-                  </ul>
-               </div>
-            </nav>
-         </header>
-    
-
-
+<?php include("header.php"); ?>
      
      <div class="mx-auto" style="width: 200px;">
       <h2 class="mt-5 ">Perfil</h2>

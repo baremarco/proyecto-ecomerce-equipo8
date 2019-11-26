@@ -7,119 +7,58 @@
    <!-- Bootstrap CSS -->
    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
    <link rel="stylesheet" href="./css/style.css">
+   <title>Otros + Servicios</title>
    <script src="https://kit.fontawesome.com/20d3506334.js" crossorigin="anonymous"></script>
 
-   <title>Home</title>
-</head>
+   </head>
 
 <body>
    <!-- NAV BAR -->
-   <header>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a href="index.html"><img class="navbar-brand" src="img/logo-198x66.png" alt="logo" height="60px"></a>
-         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-         </button>
-         <div class="collapse navbar-collapse " id="navbarText">
-            <ul class="navbar-nav ml-auto ">
-               <li class="nav-item active ">
-                  <a class="nav-link" href="#">PRINCIPAL</a>
-               </li>
-               <li class="nav-item">
-                  <a class="nav-link" href="login.html">INGRESAR</a>
-               </li>
-               <li class="nav-item">
-                  <a class="nav-link" href="register.html">REGISTRAR</a>
-               </li>
-               <li class="nav-item">
-                  <a class="nav-link" href="faq.html">F.A.Q.</a>
-               </li>
-               <li class="nav-item">
-                  <a class="nav-link" href="contact.html">CONTACTO</a>
-               </li>
-               <li>
-                  <a class="nav-link" href="perfil.html"><i class="fas fa-user-edit"></i></a>
-               </li>
-               <li>
-                  <a class="nav-link" href="carrito.html"><i class="fas fa-shopping-cart"></i></a>
-                  
-               </li>
-            </ul>
-         </div>
-      </nav>
-   </header>
+   <?php include("header.php"); ?>
    <!-- NAV BAR -->
-   
-   <!-- CARRUSEL -->    
-   <div class="container-fluid ">
-      <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-         <div class="carousel-inner">
-            <div class="carousel-item active">
-               <img class="d-block w-100 " src="img/imagen-inicio_01.jpg" alt="First slide">
-            </div>
-            <div class="carousel-item">
-               <img class="d-block w-100" src="img/imagen-inicio_02.jpg" alt="Second slide">
-            </div>
-            <div class="carousel-item">
-               <img class="d-block w-100" src="img/imagen-inicio_03.jpg" alt="Third slide">
-            </div>
-         </div>
-      </div>
-      
-
-      <!-- CARRUSEL -->
-      <!--QUIENES SOMOS-->
-      <div class="jumbotron">
-         <h1 class="display-4">HOME- QUIENES SOMOS</h1>
-         
-         <hr class="my-4">
-         <p>Bienvenidos a la Círculo Privado de Compra  - Venta de Artículos.</p>
-         <p>Tenemos algo que vender, quizás mi compañero de oficina o de la oficina de al lado está buscando justo lo mismo, sin gastos de envíos ni comisiones. Conociendo a quien nos lo vende así nace InterTienda, un círculo de transacciones de productos dentro de tu ámbito de trabajo.</p>
-         <p>¿Cómo acceder? Sencillo, te registrás y un administrador valida que pertenecés a la empresa, luego de esto te llega el email y ya puedes publicar y ver los productos.</p>
-
-       </div>
-
-      <!--QUIENES SOMOS-->
 
       <!-- CARDS -->
+      
       <div class="container container-fluid">
          
+            <div class="tittle">
+                  <h1>Ropa</h1>
+               </div>
+            <a href="index.html" class="btn btn-link">Volver a principal</a>   
          
          <div class="row  mt-4 mb-4 d-flex justify-content-lg-around justify-content-md-end ">
-
-
-
             <div class="col-lg-3 col-sm-12 col-md-6 mb-4">
                <div class="card" style="width: 18rem;">
-                  <img src="./img/cateroria_tecnologia.png" class="card-img-top" alt="...">
+                  <img src="productos/ropa_01.png" class="card-img-top" alt="...">
                   <div class="card-body">
-                     <h5 class="card-title">Tecnologia</h5>
-                     <p class="card-text">Cualquier equipo tecnologico que quieras comprar</p>
-                     <a href="cat_tecno.html" class="btn btn-primary">Ir</a>
-                  </div>
-               </div>
-            </div>
-
-            <div class="col-lg-3 col-sm-12 col-md-6 mb-4">
-               <div class="card" style="width: 18rem;">
-                  <img src="./img/cateroria_otros.png" class="card-img-top" alt="...">
-                  <div class="card-body">
-                     <h5 class="card-title">Otros + Servicios</h5>
-                     <p class="card-text">Otros productos mas servicios ofrecidos</p>
-                     <a href="cat_otros.html" class="btn btn-primary">Ir</a>
+                     <h5 class="card-title">Saco de Vestir</h5>
+                     <p class="card-text">Ambo clásico para hombre semi entallado. Excelente corte, calidad y confección. Tela tropical</p>
+                     <p><b>$3.000</b></p>
+                     <a href="#" class="btn btn-primary">+info</a>
                   </div>
                </div>
             </div>
             
-
+            <div class="col-lg-3 col-sm-12 col-md-6 mb-4">
+               <div class="card" style="width: 18rem;">
+                  <img src="productos/ropa_2.png" class="card-img-top" alt="...">
+                  <div class="card-body">
+                        <h5 class="card-title">Zapato de vestir</h5>
+                        <p class="card-text">Talle 40 color azul</p>
+                        <p><b>$2.500</b></p>
+                        <a href="#" class="btn btn-primary">+info</a>
+                  </div>
+               </div>
+            </div>
             
             <div class="col-lg-3 col-sm-12 col-md-6 mb-4">
                <div class="card" style="width: 18rem;">
-                  <img src="./img/cateroria_vestimenta.png" class="card-img-top" alt="...">
+                  <img src="productos/ropa_3.png" class="card-img-top" alt="...">
                   <div class="card-body">
-                     <h5 class="card-title">Vestimenta</h5>
-                     <p class="card-text">Cualquier ropa o calzado que quieras comprar</p>
-                     <a href="cat_vestimenta.html" class="btn btn-primary">Ir</a>
+                        <h5 class="card-title">Zapatilla adidas</h5>
+                        <p class="card-text">Blancas y negras talle 39</p>
+                        <p><b>$2.100</b></p>
+                        <a href="#" class="btn btn-primary">+info</a>
                   </div>
                </div>
             </div>
@@ -127,7 +66,26 @@
       </div>
       <!-- CARDS -->
    </div>
-   
+
+   <div class="container container-fluid">
+         
+         
+         <div class="row  mt-4 mb-4 d-flex justify-content-lg-around justify-content-md-end ">
+            <div class="col-lg-3 col-sm-12 col-md-6 mb-4">
+               <div class="card" style="width: 18rem;">
+                  <img src="productos/ropa_4.png" class="card-img-top" alt="...">
+                  <div class="card-body">
+                        <h5 class="card-title">Gorra Nike</h5>
+                     <p class="card-text">Negra</p>
+                     <p><b>$1.100</b></p>
+                     <a href="#" class="btn btn-primary">+info</a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+
    <!-- FOOTER -->
    <footer class="page-footer font-small blue pt-4">
       ​
@@ -156,16 +114,16 @@
                
                <ul class="list-unstyled">
                   <li>
-                     <a href="index.html">Home</a>
+                     <a href="#">Home</a>
                   </li>
                   <li>
-                     <a href="faq.html">FAQ</a>
+                     <a href="#!">FAQ</a>
                   </li>
                   <li>
-                     <a href="login.html">Login</a>
+                     <a href="#!">Login</a>
                   </li>
                   <li>
-                     <a href="register.html">Registro</a>
+                     <a href="#!">Registro</a>
                   </li>
                </ul>
                

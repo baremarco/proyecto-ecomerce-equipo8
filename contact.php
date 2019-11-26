@@ -2,93 +2,73 @@
 <html lang="en">
 <head>
    <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-   <!-- Bootstrap CSS -->
    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
    <link rel="stylesheet" href="./css/style.css">
    <script src="https://kit.fontawesome.com/20d3506334.js" crossorigin="anonymous"></script>
    
-   <title>Otros + Servicios</title>
+   <title>Contact</title>
 </head>
-
 <body>
-   <!-- NAV BAR -->
-   <header>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-         <a href="index.html"><img class="navbar-brand" src="img/logo-198x66.png" alt="logo" height="60px"></a>
-         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-         </button>
-         <div class="collapse navbar-collapse " id="navbarText">
-            <ul class="navbar-nav ml-auto ">
-               <li class="nav-item active ">
-                  <a class="nav-link" href="index.html">PRINCIPAL</a>
-               </li>
-               <li class="nav-item">
-                  <a class="nav-link" href="login.html">INGRESAR</a>
-               </li>
-               <li class="nav-item">
-                  <a class="nav-link" href="register.html">REGISTRAR</a>
-               </li>
-               <li class="nav-item">
-                  <a class="nav-link" href="faq.html">F.A.Q.</a>
-               </li>
-               <li class="nav-item">
-                  <a class="nav-link" href="contact.html">CONTACTO</a>
-               </li>
-               <li>
-                  <a class="nav-link" href="perfil.html"><i class="fas fa-user-edit"></i></a>
-               </li>
-               <li>
-                  <a class="nav-link" href="carrito.html"><i class="fas fa-shopping-cart"></i></a>
-                  
-               </li>
-            </ul>
-         </div>
-      </nav>
-   </header>
-   <!-- NAV BAR -->
    
-   <!-- CARDS -->
-   
-   <div class="container container-fluid">
+<?php include("header.php"); ?>
+   <!-- Material form contact -->
+   <div class="card ">
       
-      <div class="tittle">
-         <h1>Otros + Servicios</h1>
-      </div>
-      <a href="index.html" class="btn btn-link">Volver a principal</a>
-      
-      <div class="row  mt-4 mb-4 d-flex justify-content-lg-around justify-content-md-end ">
-         <div class="col-lg-3 col-sm-12 col-md-6 mb-4">
-            <div class="card" style="width: 18rem;">
-               <img src="productos/otros_01.png" class="card-img-top" alt="...">
-               <div class="card-body">
-                  <h5 class="card-title">Licenciado en Psicología cognitiva</h5>
-                  <p class="card-text">Tratamiento Breve De Activación Conductual Para Depresión</p>
-                  <p><b>$700 x hora</b></p>
-                  <a href="#" class="btn btn-primary">+info</a>
-               </div>
-            </div>
+      <div class="container col-md-4 mt-4 mb-3">
+         
+         <div class=" my-3 col-sm-11 col-md-11 col-lg-11 col-form-label">
+            <h2><strong>Contactanos</strong></h2>
          </div>
          
-         <div class="col-lg-3 col-sm-12 col-md-6 mb-4">
-            <div class="card" style="width: 18rem;">
-               <img src="productos/otros_02.png" class="card-img-top" alt="...">
-               <div class="card-body">
-                  <h5 class="card-title">Alquiler de casa en San Bernardo</h5>
-                  <p class="card-text">Superficie total  120 m² Superficie cubierta 100 m²</p>
-                  <p>Ambientes 4</p>
-                  <p><b>$25.000 x quincena</b></p>
-                  <a href="#" class="btn btn-primary">+info</a>
+         <!--Card content-->
+         <div class="card-body px-lg-5 pt-0">
+            
+            <!-- Form -->
+            <form class="text-center" style="color: #757575;" action="#!">
+               
+               <!-- Name -->
+               <div class="md-form mt-3">
+                  <input type="text" id="materialContactFormName" class="form-control">
+                  <label for="materialContactFormName">Name</label>
                </div>
+               
+               <!-- E-mail -->
+               <div class="md-form">
+                  <input type="email" id="materialContactFormEmail" class="form-control">
+                  <label for="materialContactFormEmail">E-mail</label>
+               </div>
+               
+               <!-- Subject -->
+               
+               
+               <!--Message-->
+               <div class="md-form">
+                  <textarea id="materialContactFormMessage" class="form-control md-textarea" rows="3"></textarea>
+                  <label for="materialContactFormMessage">Mensaje</label>
+               </div>
+               
+               
+               
             </div>
-         </div>
+            
+            <!-- Send button -->
+            <button class="btn btn-outline-info btn-rounded btn-block z-depth-0 my-4 waves-effect" type="submit">Send</button>
+            
+         </form>
+         <!-- Form -->
          
       </div>
+      
    </div>
-   <!-- CARDS -->
 </div>
+<!-- Material form contact -->
+
+
+
+
+
 
 <!-- FOOTER -->
 <footer class="page-footer font-small blue pt-4">
@@ -173,13 +153,8 @@
    
 </footer>
 <!-- FOOTER -->
-
-
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
-
 </html>

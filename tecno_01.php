@@ -7,47 +7,14 @@
    <!-- Bootstrap CSS -->
    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
    <link rel="stylesheet" href="./css/style.css">
-   <title>Otros + Servicios</title>
    <script src="https://kit.fontawesome.com/20d3506334.js" crossorigin="anonymous"></script>
 
-   </head>
+   <title>Celular Chantung x4 </title>
+</head>
 
 <body>
    <!-- NAV BAR -->
-   <header>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-         <a href="index.html"><img class="navbar-brand" src="img/logo-198x66.png" alt="logo" height="60px"></a>
-         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-         </button>
-         <div class="collapse navbar-collapse " id="navbarText">
-            <ul class="navbar-nav ml-auto ">
-               <li class="nav-item active ">
-                  <a class="nav-link" href="index.html">PRINCIPAL</a>
-               </li>
-               <li class="nav-item">
-                  <a class="nav-link" href="login.html">INGRESAR</a>
-               </li>
-               <li class="nav-item">
-                  <a class="nav-link" href="register.html">REGISTRAR</a>
-               </li>
-               <li class="nav-item">
-                  <a class="nav-link" href="faq.html">F.A.Q.</a>
-               </li>
-               <li class="nav-item">
-                  <a class="nav-link" href="contact.html">CONTACTO</a>
-               </li>
-               <li>
-                  <a class="nav-link" href="perfil.html"><i class="fas fa-user-edit"></i></a>
-               </li>
-               <li>
-                  <a class="nav-link" href="carrito.html"><i class="fas fa-shopping-cart"></i></a>
-                  
-               </li>
-            </ul>
-         </div>
-      </nav>
-   </header>
+   <?php include("header.php"); ?>
    <!-- NAV BAR -->
 
       <!-- CARDS -->
@@ -55,68 +22,50 @@
       <div class="container container-fluid">
          
             <div class="tittle">
-                  <h1>Ropa</h1>
+                  <h1>Celular Chantung x4 </h1>
                </div>
-            <a href="index.html" class="btn btn-link">Volver a principal</a>   
+               <a href="index.html" class="btn btn-link">Volver a Principal</a>
+               <a href="cat_tecno.html" class="btn btn-link">Volver a Categoría tecnología</a>   
          
          <div class="row  mt-4 mb-4 d-flex justify-content-lg-around justify-content-md-end ">
             <div class="col-lg-3 col-sm-12 col-md-6 mb-4">
                <div class="card" style="width: 18rem;">
-                  <img src="productos/ropa_01.png" class="card-img-top" alt="...">
+                  <img src="productos/tecno_01.png" class="card-img-top" alt="...">
                   <div class="card-body">
-                     <h5 class="card-title">Saco de Vestir</h5>
-                     <p class="card-text">Ambo clásico para hombre semi entallado. Excelente corte, calidad y confección. Tela tropical</p>
-                     <p><b>$3.000</b></p>
-                     <a href="#" class="btn btn-primary">+info</a>
                   </div>
                </div>
             </div>
             
             <div class="col-lg-3 col-sm-12 col-md-6 mb-4">
                <div class="card" style="width: 18rem;">
-                  <img src="productos/ropa_2.png" class="card-img-top" alt="...">
-                  <div class="card-body">
-                        <h5 class="card-title">Zapato de vestir</h5>
-                        <p class="card-text">Talle 40 color azul</p>
-                        <p><b>$2.500</b></p>
-                        <a href="#" class="btn btn-primary">+info</a>
-                  </div>
+                  <img src="productos/tecno_01_02.png" class="card-img-top" alt="...">
+
                </div>
             </div>
             
             <div class="col-lg-3 col-sm-12 col-md-6 mb-4">
-               <div class="card" style="width: 18rem;">
-                  <img src="productos/ropa_3.png" class="card-img-top" alt="...">
-                  <div class="card-body">
-                        <h5 class="card-title">Zapatilla adidas</h5>
-                        <p class="card-text">Blancas y negras talle 39</p>
-                        <p><b>$2.100</b></p>
-                        <a href="#" class="btn btn-primary">+info</a>
+                     <div class="card" style="width: 18rem;">
+                        <img src="productos/tecno_01_02.png" class="card-img-top" alt="...">
+
+                     </div>
                   </div>
-               </div>
             </div>
-         </div>
+                        <div class="tittle">
+                  
+                  <p>Experiencia visual excepcional. Mirá el mundo en detalle a través de la pantalla HD+ de 6.2 ". Sumergite en tus series y películas favoritas y vivilas como si estuvieras ahí, gracias a su definición superior. Además, su diseño delgado y liviano te brindará la mejor experiencia de uso y un agarre mucho más cómodo.</p>
+
+                  <p>Fotografía profesional en tu bolsillo Capturá tus momentos favoritos en un instante. Con solo presionar un botón tendrás fotografías de alta calidad y gran resolución incluso en movimiento, gracias a su cámara de 13 Mpx. Además, podrás sacarte selfies detalladas e iluminadas con su cámara frontal de 5 Mpx.</p>
+                  <h2>PRECIO</h2>
+                  <h4>$3.000</h4>
+                  <br>
+                  <button type="button" class="btn btn-primary">Agregar al Carrito</button>
+                  <br><br>
+               </div>
       </div>
       <!-- CARDS -->
    </div>
 
-   <div class="container container-fluid">
-         
-         
-         <div class="row  mt-4 mb-4 d-flex justify-content-lg-around justify-content-md-end ">
-            <div class="col-lg-3 col-sm-12 col-md-6 mb-4">
-               <div class="card" style="width: 18rem;">
-                  <img src="productos/ropa_4.png" class="card-img-top" alt="...">
-                  <div class="card-body">
-                        <h5 class="card-title">Gorra Nike</h5>
-                     <p class="card-text">Negra</p>
-                     <p><b>$1.100</b></p>
-                     <a href="#" class="btn btn-primary">+info</a>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
+
    </div>
 
    <!-- FOOTER -->
