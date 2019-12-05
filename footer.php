@@ -26,17 +26,17 @@
                
                <ul class="list-unstyled">
                   <li>
-                     <a href="#">Home</a>
+                     <a href="index.php">Home</a>
                   </li>
                   <li>
-                     <a href="#!">FAQ</a>
+                     <a href="faq.php">FAQ</a>
                   </li>
                   <li>
-                     <a href="#!">Login</a>
+                     <a href="login.php">Login</a>
                   </li>
                   <li>
-                     <a href="#!">Registro</a>
-                  </li>
+                     <a href="register.php">Registro</a>
+                  </li> 
                </ul>
                
             </div>
