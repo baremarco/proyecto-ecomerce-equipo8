@@ -1,3 +1,5 @@
+<?php include('validaciones.php'); ?>
+
 <!DOCTYPE html>
 <html lang="en" class="h-100">
 <head>
@@ -7,12 +9,14 @@
 </head>
 
 <body class="h-100">
+   
    <!-- NAV BAR -->
    <?php include("header.php"); ?>
    <!-- NAV BAR -->
 
    <div class="container d-flex flex-column h-100">
-      <form>
+
+      <form action="login.php" method="POST">
          <div class="form-group row">
             <div class="col-sm-11 col-md-11 col-lg-11 col-form-label">
                <h2>Inicie Sesión</h2>
@@ -28,8 +32,14 @@
                <input type="password" class="form-control" id="inputPassword" placeholder="Escriba su contraseña aquí">
             </div>
          </div>
-         <button type="button" class="btn btn-secondary mx-5 col-sm-2 col-md-1 col-lg-1  mt-5">Iniciar</button>
+         <button type="submit" class="btn btn-secondary mx-5 col-sm-2 col-md-1 col-lg-1  mt-5">Iniciar</button>
       </form>
+       <!-- VALIDACIONES -->
+   <ul style="color:red">
+  <?php foreach($errores as $error): ?>
+      <?= "<li>" . $error ."</li>" ?>
+      <?php endforeach ?>
+    </ul>
    </div>
   
 

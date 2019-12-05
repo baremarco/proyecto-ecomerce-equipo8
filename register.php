@@ -1,3 +1,5 @@
+<?php include('validaciones.php'); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,15 +13,16 @@
 <?php include("header.php"); ?>
   
   <div class="container">
-    
-    <form>  
+ 
+
+    <form action="register.php" method="POST">  
       <div class=" my-3 col-sm-11 col-md-11 col-lg-11 col-form-label">
         <h2><strong>Nuevo Registro</strong></h2>
       </div>
       
       <div class="form-group row my-5">
         <div class="col col-sm-5 col-md-5 col-lg-5">
-          <input type="text" class="form-control col-sm-10 col-md-10" placeholder="Nombre*" name="nombre" required>
+          <input type="text" class="form-control col-sm-10 col-md-10" placeholder="Nombre*" name="nombre" value="" required>
         </div>
         <div class="col col-sm-5 col-md-5">
           <input type="text" class="col-sm-10 col-md-10 form-control" placeholder="Apellido*" required name="apellido">
@@ -37,17 +40,22 @@
       
       <div class="form-group row my-5">
         <div class="col col-sm-5 col-md-5 col-lg-5">
-          <input type="text" class="form-control col-sm-10 col-md-10" placeholder=" Nueva contraseña*" name="password" required>
+          <input type="password" class="form-control col-sm-10 col-md-10" placeholder=" Nueva contraseña*" name="pass" required>
         </div>
         <div class="col col-sm-5 col-md-5">
-          <input type="text" class="col-sm-10 col-md-10 form-control" placeholder="Confirme contraseña*" name="confirmPassword">
+          <input type="password" class="col-sm-10 col-md-10 form-control" placeholder="Confirme contraseña*" name="repass">
         </div>
       </div>
       
       <div class="form-group col">
-        <span>(*) Campos obligatorios</span>
+        <small>(*) Campos obligatorios</small>
       </div>
-      
+       <!-- VALIDACIONES -->
+      <ul style="color:red">
+         <?php foreach($errores as $error): ?>
+            <?= "<li>" . $error ."</li>" ?>
+         <?php endforeach ?>
+       </ul>
       <div class="form-group row">
         <button type="submit" class="btn btn-secondary mx-5 col-sm-2 col-md-2 col-lg-2 mt-4">Registrar</button>
       </div>

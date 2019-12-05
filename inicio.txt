@@ -1,6 +1,0 @@
-Bienvenidos al proyecto
-A medida que vayan ingresando por favor coloquen sus nombres:
-Marco Bareno
-Robinson Alvarez
-Patricio Kenny
-

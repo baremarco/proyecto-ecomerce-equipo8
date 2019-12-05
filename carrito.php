@@ -50,8 +50,6 @@
 <?php include("footer.php"); ?>
 <!-- FOOTER -->
 
-
-
 </body>
 
 </html>
