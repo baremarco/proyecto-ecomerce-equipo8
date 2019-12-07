@@ -1,4 +1,30 @@
-<?php include('validaciones.php'); ?>
+<?php 
+include('validaciones.php'); 
+  
+  //PARA GUARDAR CADA USUARIO EN UN ARCHIVO JSON
+if($_POST){
+
+  $users = [
+      'nombre' => $_POST['nombre'],
+      'email' => $_POST['email'],
+      'password' => password_hash($_POST['pass'], PASSWORD_DEFAULT)
+  ];
+  //obtener contenido del JSON
+  $archivoSinDec = file_get_contents("usuarios.json");    
+  $archivoDecodi = json_decode($archivoSinDec, true);
+  
+  //condicional que me dice SI los archivos estan correctos(está en las validaciones.php)
+  if($validado){
+      $archivoDecodi["usuarios"][] = $users;
+  //codifico mi usuario a un archivo JSON
+  $json = json_encode($archivoDecodi);
+
+  file_put_contents("usuarios.json",$json . PHP_EOL);
+  }
+  var_dump($validado);
+}
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -22,28 +48,19 @@
       
       <div class="form-group row my-5">
         <div class="col col-sm-5 col-md-5 col-lg-5">
-          <input type="text" class="form-control col-sm-10 col-md-10" placeholder="Nombre*" name="nombre" value="" required>
+          <input type="text" class="form-control col-sm-10 col-md-10" placeholder="Nombre*" name="nombre" value="<?php persistir('nombre');?>" required>
         </div>
         <div class="col col-sm-5 col-md-5">
-          <input type="text" class="col-sm-10 col-md-10 form-control" placeholder="Apellido*" required name="apellido">
+          <input type="text" class="col-sm-10 col-md-10 form-control" placeholder="Email*" name="email" value="<?php persistir('email');?>">
         </div>
       </div>
-      
-      <div class="form-group row my-5">
-        <div class="col col-sm-5 col-md-5 col-lg-5">
-          <input type="text" class="form-control col-sm-10 col-md-10" placeholder="Teléfono" name="telefono">
-        </div>
-        <div class="col col-sm-5 col-md-5">
-          <input type="text" class="col-sm-10 col-md-10 form-control" placeholder="Email*" name="email">
-        </div>
-      </div>
-      
+    
       <div class="form-group row my-5">
         <div class="col col-sm-5 col-md-5 col-lg-5">
           <input type="password" class="form-control col-sm-10 col-md-10" placeholder=" Nueva contraseña*" name="pass" required>
         </div>
         <div class="col col-sm-5 col-md-5">
-          <input type="password" class="col-sm-10 col-md-10 form-control" placeholder="Confirme contraseña*" name="repass">
+          <input type="password" class="col-sm-10 col-md-10 form-control" placeholder="Confirme contraseña*" name="repass" required>
         </div>
       </div>
       
@@ -51,7 +68,7 @@
         <small>(*) Campos obligatorios</small>
       </div>
        <!-- VALIDACIONES -->
-      <ul style="color:red">
+      <ul style="color:red;">
          <?php foreach($errores as $error): ?>
             <?= "<li>" . $error ."</li>" ?>
          <?php endforeach ?>
@@ -61,6 +78,8 @@
       </div>
       
     </form>
+    <div style="height:15vh;">
+    </div>
   </div>
   <!-- FOOTER -->
   <?php include("footer.php")?>

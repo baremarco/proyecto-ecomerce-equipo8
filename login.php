@@ -1,4 +1,46 @@
-<?php include('validaciones.php'); ?>
+<?php 
+include('validaciones.php'); 
+
+//CREO UNA funcion QUE ALMACENE EL NOMBRE DEL ARCHIVO HACIA DONDE SE VA A REDIRIGIR EN CASO DE QUE CORRESPONDA
+
+
+
+//BUSCAR USUARIO POR EMAIL Y VALIDAR CONTRASEÑA EN ARCHIVO JSON
+if($_POST){
+
+$archivoSinDec = file_get_contents("usuarios.json");    
+$archivoDecodi = json_decode($archivoSinDec, true);
+$existeUsuario = false;
+foreach($archivoDecodi as $usuarios => $usuario){
+   //BOOLEANO PARA CONTROLAR SI EL MAIL ESTÁ REGISTRADO O NO
+   
+   foreach($usuario as $detalle){
+      //COMPARO SI EL EMAIL CORRESPONDE Y A LA VEZ SI LA PASS ES CORRECTA
+      if($_POST['email'] == $detalle['email'] && password_verify($_POST['pass'], $detalle['password'])){
+         //si el mail y la password están buenas, LOGEO AL USUARIO
+         //ECHO DE AYUDA
+         header('Location:perfil.php');
+         $existeUsuario = true;
+         $mensajeUsu = "El usuario corresponde a " . $detalle['nombre'] . ", bienvenido!";
+         $errores['login'] = null;
+         echo $mensajeUsu;
+         //SI NO SON CORRECTAS, MUESTRO UN MENSAJE DE ERROR
+      }else if($_POST['email'] == $detalle['email'] && !password_verify($_POST['pass'], $detalle['password'])){
+         $errores['login'] = "Contraseña inválida, intente nuevamente";
+         $existeUsuario = true;
+         //SI EL EMAIL NO ESTÁ REGISTRADO, ENVÍO AL USUARIO A LA PÁGINA DE REGISTRO
+      }
+      if(!$existeUsuario){
+         header('refresh:3;url=register.php');
+         $errores['login'] = "No existe ningún registro asociado a éste mail, " . $_POST['email'] . ", por favor regístrese." ;
+      }
+   }
+}
+$existeUsuario = false;
+
+}
+
+?>
 
 <!DOCTYPE html>
 <html lang="en" class="h-100">
@@ -16,29 +58,30 @@
 
    <div class="container d-flex flex-column h-100">
 
-      <form action="login.php" method="POST">
+      <form  action="login.php" method="POST">
+      <div class=" my-3 col-sm-11 col-md-11 col-lg-11 col-form-label">
+         <h2><Strong>Inicie Sesión</Strong></h2>
+       </div>
          <div class="form-group row">
-            <div class="col-sm-11 col-md-11 col-lg-11 col-form-label">
-               <h2>Inicie Sesión</h2>
-            </div>
+           
             <label for="staticEmail" class="col-sm-2 col-form-label mt-10">Email</label>
             <div class="col-sm-8 col-md-8">
-               <input type="email" class="form-control" id="staticEmail" placeholder="correo@ejemplo.com">
+               <input type="email" class="form-control" id="staticEmail" name="email" placeholder="correo@ejemplo.com" value="<?php persistir('email')?>">
             </div>
          </div>
          <div class="form-group row">
             <label for="inputPassword" class="col-sm-2 col-form-label">Contraseña</label>
             <div class="col-sm-8 col-md-8">
-               <input type="password" class="form-control" id="inputPassword" placeholder="Escriba su contraseña aquí">
+               <input type="password" class="form-control" id="inputPassword" name="pass" placeholder="Escriba su contraseña aquí">
             </div>
          </div>
          <button type="submit" class="btn btn-secondary mx-5 col-sm-2 col-md-1 col-lg-1  mt-5">Iniciar</button>
       </form>
        <!-- VALIDACIONES -->
-   <ul style="color:red">
-  <?php foreach($errores as $error): ?>
-      <?= "<li>" . $error ."</li>" ?>
-      <?php endforeach ?>
+      <ul style="color:red">
+         <?php foreach($errores as $error): ?><br>
+            <?= "<li>" . $error ."</li>" ?>
+         <?php endforeach ?>
     </ul>
    </div>
   

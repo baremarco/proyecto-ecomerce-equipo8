@@ -32,29 +32,37 @@ if($_POST){
     $validado = true;
 
     if(!filter_var($_POST['email'] , FILTER_VALIDATE_EMAIL)){
-        $errores[] = 'El mail es incorrecto <br>';
-    }
-
-    if($_POST['nombre'] == " " ){
-        $errores[] = 'Debe escribir un nombre válido <br>';
+        $errores['email'] = 'Email inválido <br>';
         $validado = false;
     }
 
-    if(count($_POST['nombre']) < 2 ){
-        $errores[] = 'El nombre debe contener al menos 2 caracteres <br>';
+    if(isset($_POST['nombre']) && $_POST['nombre'] == " "){
+        $errores['nombre'] = 'Debe escribir un nombre válido <br>';
         $validado = false;
     }
 
-    if(strlen($_POST['pass']) < 4 ){
-        $errores[] = 'La contraseña debe contener al menos 4 caracteres <br>';
+    if(isset($_POST['nombre']) && strlen($_POST['nombre']) < 2 ){
+        $errores['nombre2'] = 'El nombre debe contener al menos 2 caracteres <br>';
         $validado = false;
     }
 
-    if($_POST['pass'] != $_POST['repass']){
-        $errores[] = 'Las contraseñas no coinciden <br>';
+    if(isset($_POST['pass']) && strlen($_POST['pass']) < 4 ){
+        $errores['pass'] = 'La contraseña debe contener al menos 4 caracteres <br>';
         $validado = false;
     }
 
-
+    if(isset($_POST['repass']) && $_POST['pass'] != $_POST['repass']){
+        $errores['repass'] = 'Las contraseñas no coinciden <br>';
+        $validado = false;
+    }
+   
 }
+
+function persistir($valor){
+    if($_POST && !isset($errores["$valor"])){
+    echo $_POST["$valor"];
+    }
+}
+
+
 ?>
