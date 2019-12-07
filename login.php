@@ -11,6 +11,7 @@ if($_POST){
 $archivoSinDec = file_get_contents("usuarios.json");    
 $archivoDecodi = json_decode($archivoSinDec, true);
 $existeUsuario = false;
+if(is_array($archivoDecodi)){
 foreach($archivoDecodi as $usuarios => $usuario){
    //BOOLEANO PARA CONTROLAR SI EL MAIL ESTÁ REGISTRADO O NO
    
@@ -37,7 +38,7 @@ foreach($archivoDecodi as $usuarios => $usuario){
    }
 }
 $existeUsuario = false;
-
+}
 }
 
 ?>
