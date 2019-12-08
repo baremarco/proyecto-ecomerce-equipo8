@@ -1,3 +1,22 @@
+<?php
+
+session_start();
+
+function addInfo($dato){
+if($_SESSION){
+return $_SESSION["$dato"];
+  }
+}
+
+if($_POST){
+  if($_POST['session'] == "destroy"){
+    session_destroy();
+  }
+  var_dump($_POST['session']);
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,16 +33,19 @@
      <div class="card mb-5 " style="width: 18rem ">
          <img src="img/Forrest-Gump.jpg" class="card-img-top rounded-circle" alt="...">
          <div class="card-body">
-           <h5 class="card-title">Forrest-Gump</h5>
-           <p class="card-text">Usuario</p>
+           <h5 class="card-title"><Strong>USUARIO</Strong></h5>
+           <p class="card-text"><?=addInfo('nombre');?></p>
          </div>
          <ul class="list-group list-group-flush">
-           <li class="list-group-item">Email</li>
+           <li class="list-group-item"><?=addInfo('email');?></li>
            <li class="list-group-item">Direccion</li>
            <li class="list-group-item">Dni</li>
+                
          </ul>
-         
-     
+         <form action="perfil.php" method="POST" >
+        <button  type="submit"  class="btn btn-danger col-sm-12 col-md-12 col-lg-12" name="session" value="destroy"><Strong>Salir</Strong></button>
+        </form>
+
        </div>
        </div>
 

@@ -1,6 +1,6 @@
 <?php 
+session_start();
 include('validaciones.php'); 
-  
   //PARA GUARDAR CADA USUARIO EN UN ARCHIVO JSON
 if($_POST){
 
@@ -12,17 +12,48 @@ if($_POST){
   //obtener contenido del JSON
   $archivoSinDec = file_get_contents("usuarios.json");    
   $archivoDecodi = json_decode($archivoSinDec, true);
-  
-  //condicional que me dice SI los archivos estan correctos(está en las validaciones.php)
-  if($validado){
-      $archivoDecodi["usuarios"][] = $users;
-  //codifico mi usuario a un archivo JSON
-  $json = json_encode($archivoDecodi);
+      //CONDICIONAL QUE VERIFICA QUE NO EXISTE OTRA CUENTA CON EL MISMO MAIL
+  if(is_array($archivoDecodi)){
+    foreach($archivoDecodi as $usuarios => $usuario){
+       foreach($usuario as $detalle){
+         
+          //COMPARO SI EL EMAIL CORRESPONDE O NO PARA REGISTRAR
+          if($_POST['email'] == $detalle['email']){
+            var_dump($detalle['email']);
+            $validado = false;
+            $errores['mailRepeat'] = "éste mail ya está registrado";
 
-  file_put_contents("usuarios.json",$json . PHP_EOL);
+            $json = json_encode($archivoDecodi);
+
+            file_put_contents("usuarios.json",$json . PHP_EOL);
+          }
+       }
+      }
+    }
+
+
+  //condicional que me dice SI los archivos estan correctos(está en las validaciones.php) LUEGO INCLUYO EL USUARIO EN EL JSON
+  if($validado){
+
+            $archivoDecodi["usuarios"][] = $users;
+            //codifico mi usuario a un archivo JSON
+            $json = json_encode($archivoDecodi);
+
+            file_put_contents("usuarios.json",$json . PHP_EOL);
+            $_SESSION['nombre'] = $users['nombre'];
+            $_SESSION['email'] = $users['email'];
+
+            header('Location:perfil.php');
+            
   }
-  var_dump($validado);
-}
+ 
+
+var_dump($_POST['email']);
+  
+var_dump($validado);
+    }
+  
+
 
 ?>
 

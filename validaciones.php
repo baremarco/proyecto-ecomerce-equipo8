@@ -1,8 +1,10 @@
 <?php
+
 $nombre = "";
 $apellido = "";
 $email = "";
 $pass = "";
+
 
 if(isset($_POST['nombre'])){
     $nombre = $_POST['nombre'];
@@ -21,6 +23,7 @@ if(isset($_POST['pass'])){
 if(isset($_POST['repass'])){
     $pass = password_hash($_POST['repass'], PASSWORD_DEFAULT);
 }
+
 
 $errores = [
     /* 
@@ -63,6 +66,5 @@ function persistir($valor){
     echo $_POST["$valor"];
     }
 }
-
 
 ?>

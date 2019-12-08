@@ -1,30 +1,32 @@
 <?php 
+
 include('validaciones.php'); 
+//INICIO LA VAR GLOBAL SESSION
+session_start();
 
-//CREO UNA funcion QUE ALMACENE EL NOMBRE DEL ARCHIVO HACIA DONDE SE VA A REDIRIGIR EN CASO DE QUE CORRESPONDA
-
-
-
-//BUSCAR USUARIO POR EMAIL Y VALIDAR CONTRASEÑA EN ARCHIVO JSON
 if($_POST){
-
 $archivoSinDec = file_get_contents("usuarios.json");    
 $archivoDecodi = json_decode($archivoSinDec, true);
 $existeUsuario = false;
+
 if(is_array($archivoDecodi)){
 foreach($archivoDecodi as $usuarios => $usuario){
-   //BOOLEANO PARA CONTROLAR SI EL MAIL ESTÁ REGISTRADO O NO
+   //PARA CONTROLAR SI EL MAIL ESTÁ REGISTRADO O NO
    
    foreach($usuario as $detalle){
       //COMPARO SI EL EMAIL CORRESPONDE Y A LA VEZ SI LA PASS ES CORRECTA
       if($_POST['email'] == $detalle['email'] && password_verify($_POST['pass'], $detalle['password'])){
          //si el mail y la password están buenas, LOGEO AL USUARIO
-         //ECHO DE AYUDA
+         $_SESSION['nombre'] = $detalle['nombre'];
+         $_SESSION['email'] = $detalle['email'];
+         
+         //REDIRIGO AL USUARIO A LA PAG DE PERFIL
          header('Location:perfil.php');
          $existeUsuario = true;
+         //ECHO AYUDA
          $mensajeUsu = "El usuario corresponde a " . $detalle['nombre'] . ", bienvenido!";
          $errores['login'] = null;
-         echo $mensajeUsu;
+         
          //SI NO SON CORRECTAS, MUESTRO UN MENSAJE DE ERROR
       }else if($_POST['email'] == $detalle['email'] && !password_verify($_POST['pass'], $detalle['password'])){
          $errores['login'] = "Contraseña inválida, intente nuevamente";
@@ -32,15 +34,18 @@ foreach($archivoDecodi as $usuarios => $usuario){
          //SI EL EMAIL NO ESTÁ REGISTRADO, ENVÍO AL USUARIO A LA PÁGINA DE REGISTRO
       }
       if(!$existeUsuario){
+         //SI NO EXISTE EL MAIL, REDIRIJO AL USUARIO DESPUÉS DE 3 SEGUNDOS ALA PÁGINA DE REGISTRO
          header('refresh:3;url=register.php');
          $errores['login'] = "No existe ningún registro asociado a éste mail, " . $_POST['email'] . ", por favor regístrese." ;
       }
    }
 }
+
 $existeUsuario = false;
 }
-}
 
+}
+var_dump($_SESSION);
 ?>
 
 <!DOCTYPE html>
