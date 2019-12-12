@@ -13,7 +13,7 @@ if($_POST){
     session_destroy();
     header('Location:index.php');
   }
-  var_dump($_POST['session']);
+  header('Location:index.php');
 }
 
 ?>
@@ -32,7 +32,7 @@ if($_POST){
      <div class="mx-auto" style="width: 200px;">
       <h2 class="mt-5 ">Perfil</h2>
      <div class="card mb-5 " style="width: 18rem ">
-         <img src="img/Forrest-Gump.jpg" class="card-img-top rounded-circle" alt="...">
+         <img src="avatars/<?=addInfo('avatar')?>" class="card-img-top rounded-circle" alt="...">
          <div class="card-body">
            <h5 class="card-title"><Strong>USUARIO</Strong></h5>
            <p class="card-text"><?=addInfo('nombre');?></p>

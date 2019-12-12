@@ -58,6 +58,19 @@ if($_POST){
         $errores['repass'] = 'Las contraseñas no coinciden <br>';
         $validado = false;
     }
+    if(isset($_FILES['avatar'])){
+        if($_FILES['avatar']['error']){
+            $errores['avatar'] = 'Debes subir una foto de perfil';
+            $validado = false;
+        }else{
+            //OBTENEMOS LA EXTENCION DEL ARCHIVO SUBIDO
+            $ext = pathinfo($_FILES['avatar']['name'],PATHINFO_EXTENSION);
+            if(strtolower($ext) != 'jpg' && strtolower($ext) != 'jpeg' && strtolower($ext) != 'png') {
+                $errores['avatar'] = "La extensión del archivo debe ser jpg, png ó jpeg";
+                $validado = false;
+            }
+        }
+    }
    
 }
 
@@ -65,6 +78,26 @@ function persistir($valor){
     if($_POST && !isset($errores["$valor"])){
     echo $_POST["$valor"];
     }
+}
+
+function guardarAvatar() {
+    // me guardo la extensión del archivo
+    $ext = pathinfo($_FILES['avatar']['name'], PATHINFO_EXTENSION);
+
+    // me guardo la carpeta temporal en la que se encuentra
+    $directorioTemporal = $_FILES['avatar']['tmp_name'];
+
+    // armo el nombre con el que voy a guardar la imagen. La función uniqid() puede recibir un string, que será el prefijo del id aleatorio generado
+    $nombreImagen = uniqid('img_') . '.' . $ext;
+    
+    // armo la ruta final de la imagen, concatenando al final el nombre que creé
+    $carpetaFinal = dirname(__FILE__) . '/avatars/' . $nombreImagen;
+    
+    // muevo el archivo a la carpeta avatars
+    move_uploaded_file($directorioTemporal, $carpetaFinal);
+    
+    // devuelvo el nombre de la imagen que armé, para guardarlo en el array del usuario
+    return $nombreImagen;
 }
 
 ?>
