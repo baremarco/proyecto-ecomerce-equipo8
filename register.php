@@ -19,7 +19,7 @@ if($_POST){
          
           //COMPARO SI EL EMAIL CORRESPONDE O NO PARA REGISTRAR
           if($_POST['email'] == $detalle['email']){
-            var_dump($detalle['email']);
+            // var_dump($detalle['email']);
             $validado = false;
             $errores['mailRepeat'] = "éste mail ya está registrado";
 
@@ -34,7 +34,8 @@ if($_POST){
 
   //condicional que me dice SI los archivos estan correctos(está en las validaciones.php) LUEGO INCLUYO EL USUARIO EN EL JSON
   if($validado){
-
+            $nombreAvatar = guardarAvatar();
+            $users['avatar'] = $nombreAvatar;
             $archivoDecodi["usuarios"][] = $users;
             //codifico mi usuario a un archivo JSON
             $json = json_encode($archivoDecodi);
@@ -42,15 +43,18 @@ if($_POST){
             file_put_contents("usuarios.json",$json . PHP_EOL);
             $_SESSION['nombre'] = $users['nombre'];
             $_SESSION['email'] = $users['email'];
-
+            $_SESSION['avatar']= $users['avatar'];
             header('Location:perfil.php');
             
   }
  
 
-var_dump($_POST['email']);
+// var_dump($_POST['email']);
   
-var_dump($validado);
+// var_dump($validado);
+// var_dump($_FILES);
+// var_dump($_POST);
+//exit;
     }
   
 
@@ -72,29 +76,35 @@ var_dump($validado);
   <div class="container">
  
 
-    <form action="register.php" method="POST">  
+    <form action="register.php" method="POST" enctype="multipart/form-data">  
       <div class=" my-3 col-sm-11 col-md-11 col-lg-11 col-form-label">
         <h2><strong>Nuevo Registro</strong></h2>
       </div>
       
       <div class="form-group row my-5">
-        <div class="col col-sm-5 col-md-5 col-lg-5">
+        <div class="col col-sm-12 col-md-5 col-lg-5">
           <input type="text" class="form-control col-sm-10 col-md-10" placeholder="Nombre*" name="nombre" value="<?php persistir('nombre');?>" required>
         </div>
-        <div class="col col-sm-5 col-md-5">
+        <div class="col col-sm-12 col-md-5">
           <input type="text" class="col-sm-10 col-md-10 form-control" placeholder="Email*" name="email" value="<?php persistir('email');?>">
         </div>
       </div>
     
       <div class="form-group row my-5">
-        <div class="col col-sm-5 col-md-5 col-lg-5">
+        <div class="col col-sm-12 col-md-5 col-lg-5">
           <input type="password" class="form-control col-sm-10 col-md-10" placeholder=" Nueva contraseña*" name="pass" required>
         </div>
-        <div class="col col-sm-5 col-md-5">
+        <div class="col col-sm-12 col-md-5">
           <input type="password" class="col-sm-10 col-md-10 form-control" placeholder="Confirme contraseña*" name="repass" required>
         </div>
       </div>
       
+      <div class="form-group row my-5">
+        <div class="col col-sm-12 col-md-6 col-lg-6">
+          <input type="file" class="form-control col-sm-10 col-md-10" name="avatar" required>
+        </div>
+      </div>
+
       <div class="form-group col">
         <small>(*) Campos obligatorios</small>
       </div>

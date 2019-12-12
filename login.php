@@ -19,7 +19,7 @@ foreach($archivoDecodi as $usuarios => $usuario){
          //si el mail y la password están buenas, LOGEO AL USUARIO
          $_SESSION['nombre'] = $detalle['nombre'];
          $_SESSION['email'] = $detalle['email'];
-         
+         $_SESSION['avatar']= $detalle['avatar'];
          //REDIRIGO AL USUARIO A LA PAG DE PERFIL
          header('Location:perfil.php');
          $existeUsuario = true;
@@ -45,7 +45,7 @@ $existeUsuario = false;
 }
 
 }
-var_dump($_SESSION);
+// var_dump($_SESSION);
 ?>
 
 <!DOCTYPE html>
