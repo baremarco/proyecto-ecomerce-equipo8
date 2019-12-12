@@ -31,7 +31,6 @@ foreach($archivoDecodi as $usuarios => $usuario){
       }else if($_POST['email'] == $detalle['email'] && !password_verify($_POST['pass'], $detalle['password'])){
          $errores['login'] = "Contraseña inválida, intente nuevamente";
          $existeUsuario = true;
-         //SI EL EMAIL NO ESTÁ REGISTRADO, ENVÍO AL USUARIO A LA PÁGINA DE REGISTRO
       }
       if(!$existeUsuario){
          //SI NO EXISTE EL MAIL, REDIRIJO AL USUARIO DESPUÉS DE 3 SEGUNDOS ALA PÁGINA DE REGISTRO

@@ -11,6 +11,7 @@ return $_SESSION["$dato"];
 if($_POST){
   if($_POST['session'] == "destroy"){
     session_destroy();
+    header('Location:index.php');
   }
   var_dump($_POST['session']);
 }
