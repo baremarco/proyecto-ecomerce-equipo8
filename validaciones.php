@@ -4,7 +4,7 @@ $nombre = "";
 $apellido = "";
 $email = "";
 $pass = "";
-
+$existeUsuario = false;
 
 if(isset($_POST['nombre'])){
     $nombre = $_POST['nombre'];

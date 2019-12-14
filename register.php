@@ -51,7 +51,7 @@ if($_POST){
 
 // var_dump($_POST['email']);
   
-// var_dump($validado);
+ //var_dump($validado);
 // var_dump($_FILES);
 // var_dump($_POST);
 //exit;

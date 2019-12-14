@@ -7,7 +7,6 @@ session_start();
 if($_POST){
 $archivoSinDec = file_get_contents("usuarios.json");    
 $archivoDecodi = json_decode($archivoSinDec, true);
-$existeUsuario = false;
 
 if(is_array($archivoDecodi)){
 foreach($archivoDecodi as $usuarios => $usuario){
@@ -28,23 +27,28 @@ foreach($archivoDecodi as $usuarios => $usuario){
          $errores['login'] = null;
          
          //SI NO SON CORRECTAS, MUESTRO UN MENSAJE DE ERROR
-      }else if($_POST['email'] == $detalle['email'] && !password_verify($_POST['pass'], $detalle['password'])){
+      }
+      if($_POST['email'] == $detalle['email'] && !password_verify($_POST['pass'], $detalle['password'])){
+          $existeUsuario = true;
          $errores['login'] = "Contraseña inválida, intente nuevamente";
-         $existeUsuario = true;
+        
       }
-      if(!$existeUsuario){
-         //SI NO EXISTE EL MAIL, REDIRIJO AL USUARIO DESPUÉS DE 3 SEGUNDOS ALA PÁGINA DE REGISTRO
-         header('refresh:3;url=register.php');
-         $errores['login'] = "No existe ningún registro asociado a éste mail, " . $_POST['email'] . ", por favor regístrese." ;
-      }
+      
+   }
+   if(!$existeUsuario){
+      //SI NO EXISTE EL MAIL, REDIRIJO AL USUARIO DESPUÉS DE 3 SEGUNDOS ALA PÁGINA DE REGISTRO
+      $errores['login'] = "No existe ningún registro asociado a éste mail, " . $_POST['email'] . ", por favor regístrese." ;
+      header('refresh:3;url=register.php');
+     
    }
 }
 
-$existeUsuario = false;
+//$existeUsuario = false;
 }
 
 }
-// var_dump($_SESSION);
+/* var_dump($existeUsuario);
+var_dump($_SESSION); */
 ?>
 
 <!DOCTYPE html>
