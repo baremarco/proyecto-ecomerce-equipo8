@@ -31,7 +31,6 @@ foreach($archivoDecodi as $usuarios => $usuario){
       if($_POST['email'] == $detalle['email'] && !password_verify($_POST['pass'], $detalle['password'])){
           $existeUsuario = true;
          $errores['login'] = "Contraseña inválida, intente nuevamente";
-        
       }
       
    }
@@ -84,6 +83,12 @@ var_dump($_SESSION); */
                <input type="password" class="form-control" id="inputPassword" name="pass" placeholder="Escriba su contraseña aquí">
             </div>
          </div>
+         <div class="form-group row">
+            <label class="col-sm-2 col-form-label mt-10">Recordar usuario</label>
+            <div class="col-sm-8 col-md-8">
+               <input type="checkbox" id="checkbox" name="checkRecordarUsu">
+            </div>
+         </div>
          <button type="submit" class="btn btn-secondary mx-5 col-sm-2 col-md-1 col-lg-1  mt-5">Iniciar</button>
       </form>
        <!-- VALIDACIONES -->
@@ -93,7 +98,6 @@ var_dump($_SESSION); */
          <?php endforeach ?>
     </ul>
    </div>
-  
 
    <!-- FOOTER -->
    <?php include("footer.php"); ?>
