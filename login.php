@@ -3,7 +3,6 @@
 include('validaciones.php'); 
 //INICIO LA VAR GLOBAL SESSION
 session_start();
-
 if($_POST){
 $archivoSinDec = file_get_contents("usuarios.json");    
 $archivoDecodi = json_decode($archivoSinDec, true);
@@ -15,10 +14,21 @@ foreach($archivoDecodi as $usuarios => $usuario){
    foreach($usuario as $detalle){
       //COMPARO SI EL EMAIL CORRESPONDE Y A LA VEZ SI LA PASS ES CORRECTA
       if($_POST['email'] == $detalle['email'] && password_verify($_POST['pass'], $detalle['password'])){
+         if(isset($_POST['recordarUsuario']) && $_POST['recordarUsuario'] == "on") {
+            setcookie('email', $detalle['email'], time() + 60 * 60 * 24 * 7);
+            setcookie('nombre', $detalle['nombre'], time() + 60 * 60 * 24 * 7);
+            setcookie('avatar', $detalle['avatar'], time() + 60 * 60 * 24 * 7);
+            $_SESSION['nombre'] = $detalle['nombre'];
+            $_SESSION['email'] = $detalle['email'];
+            $_SESSION['avatar']= $detalle['avatar'];
+
+        }else{
+           $_SESSION['nombre'] = $detalle['nombre'];
+           $_SESSION['email'] = $detalle['email'];
+           $_SESSION['avatar']= $detalle['avatar'];
+
+        }
          //si el mail y la password están buenas, LOGEO AL USUARIO
-         $_SESSION['nombre'] = $detalle['nombre'];
-         $_SESSION['email'] = $detalle['email'];
-         $_SESSION['avatar']= $detalle['avatar'];
          //REDIRIGO AL USUARIO A LA PAG DE PERFIL
          header('Location:perfil.php');
          $existeUsuario = true;
@@ -42,12 +52,10 @@ foreach($archivoDecodi as $usuarios => $usuario){
    }
 }
 
-//$existeUsuario = false;
+
 }
 
 }
-/* var_dump($existeUsuario);
-var_dump($_SESSION); */
 ?>
 
 <!DOCTYPE html>
@@ -74,7 +82,7 @@ var_dump($_SESSION); */
            
             <label for="staticEmail" class="col-sm-2 col-form-label mt-10">Email</label>
             <div class="col-sm-8 col-md-8">
-               <input type="email" class="form-control" id="staticEmail" name="email" placeholder="correo@ejemplo.com" value="<?php persistir('email')?>">
+               <input type="email" class="form-control" id="staticEmail" name="email" placeholder="correo@ejemplo.com" value="">
             </div>
          </div>
          <div class="form-group row">
@@ -86,7 +94,7 @@ var_dump($_SESSION); */
          <div class="form-group row">
             <label class="col-sm-2 col-form-label mt-10">Recordar usuario</label>
             <div class="col-sm-8 col-md-8">
-               <input type="checkbox" id="checkbox" name="checkRecordarUsu">
+               <input type="checkbox" id="checkbox" name="recordarUsuario">
             </div>
          </div>
          <button type="submit" class="btn btn-secondary mx-5 col-sm-2 col-md-1 col-lg-1  mt-5">Iniciar</button>

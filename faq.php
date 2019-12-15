@@ -1,10 +1,13 @@
+<?php 
+include_once("validaciones.php");
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   
-   <?php include("head.php"); ?>
-   <title>FAQ</title>
 
+<?php include("head.php"); ?>
+   <title>FAQ</title>
 </head>
 
 

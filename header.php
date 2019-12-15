@@ -1,3 +1,6 @@
+<?php 
+include_once("validaciones.php");
+?>
 <header>
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a href="index.php"><img class="navbar-brand" src="img/logo-198x66.png" alt="logo" height="60px"></a>
@@ -22,7 +25,7 @@
                   <a class="nav-link" href="contact.php">CONTACTO</a>
                </li>
                <li>
-                  <a class="nav-link" href="perfil.php"><i class="fas fa-user-edit"></i></a>
+                  <a class="nav-link <?= isLogueado($_SESSION) ? "text-success" : "" ?>" href="perfil.php"><i class="fas fa-user-edit "></i></a>
                </li>
                <li>
                   <a class="nav-link" href="carrito.php"><i class="fas fa-shopping-cart"></i></a>

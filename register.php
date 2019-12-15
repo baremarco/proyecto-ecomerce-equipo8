@@ -1,6 +1,6 @@
 <?php 
+include_once('validaciones.php'); 
 session_start();
-include('validaciones.php'); 
   //PARA GUARDAR CADA USUARIO EN UN ARCHIVO JSON
 if($_POST){
 
@@ -21,7 +21,7 @@ if($_POST){
           if($_POST['email'] == $detalle['email']){
             // var_dump($detalle['email']);
             $validado = false;
-            $errores['mailRepeat'] = "éste mail ya está registrado";
+            $errores['email'] = "este email ya esta registrado";
 
             $json = json_encode($archivoDecodi);
 
@@ -39,8 +39,8 @@ if($_POST){
             $archivoDecodi["usuarios"][] = $users;
             //codifico mi usuario a un archivo JSON
             $json = json_encode($archivoDecodi);
-
             file_put_contents("usuarios.json",$json . PHP_EOL);
+
             $_SESSION['nombre'] = $users['nombre'];
             $_SESSION['email'] = $users['email'];
             $_SESSION['avatar']= $users['avatar'];
@@ -48,13 +48,6 @@ if($_POST){
             
   }
  
-
-// var_dump($_POST['email']);
-  
- //var_dump($validado);
-// var_dump($_FILES);
-// var_dump($_POST);
-//exit;
     }
   
 
@@ -83,10 +76,10 @@ if($_POST){
       
       <div class="form-group row my-5">
         <div class="col col-sm-12 col-md-5 col-lg-5">
-          <input type="text" class="form-control col-sm-10 col-md-10" placeholder="Nombre*" name="nombre" value="<?php persistir('nombre');?>" required>
+          <input type="text" class="form-control col-sm-10 col-md-10" placeholder="Nombre*" name="nombre" value="<?= persistir("nombre",$errores)?>" required>
         </div>
         <div class="col col-sm-12 col-md-5">
-          <input type="text" class="col-sm-10 col-md-10 form-control" placeholder="Email*" name="email" value="<?php persistir('email');?>">
+          <input type="text" class="col-sm-10 col-md-10 form-control" placeholder="Email*" name="email" value="<?=persistir("email",$errores)?>" required>
         </div>
       </div>
     

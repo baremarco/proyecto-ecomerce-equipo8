@@ -6,6 +6,12 @@ $email = "";
 $pass = "";
 $existeUsuario = false;
 
+$errores = [
+    /* 
+    acá van los errores
+ */
+];
+
 if(isset($_POST['nombre'])){
     $nombre = $_POST['nombre'];
 }
@@ -24,13 +30,6 @@ if(isset($_POST['repass'])){
     $pass = password_hash($_POST['repass'], PASSWORD_DEFAULT);
 }
 
-
-$errores = [
-    /* 
-    acá van los errores
- */
-];
-
 if($_POST){
     $validado = true;
 
@@ -40,12 +39,12 @@ if($_POST){
     }
 
     if(isset($_POST['nombre']) && $_POST['nombre'] == " "){
-        $errores['nombre'] = 'Debe escribir un nombre válido <br>';
+        $errores['nombre'] = 'Debes llenar este campo <br>';
         $validado = false;
     }
 
     if(isset($_POST['nombre']) && strlen($_POST['nombre']) < 2 ){
-        $errores['nombre2'] = 'El nombre debe contener al menos 2 caracteres <br>';
+        $errores['nombre'] = 'El nombre debe contener al menos 2 caracteres <br>';
         $validado = false;
     }
 
@@ -73,11 +72,16 @@ if($_POST){
     }
    
 }
-
-function persistir($valor){
-    if($_POST && !isset($errores["$valor"])){
-    echo $_POST["$valor"];
+function persistir($campo, $errores){
+    //isset($errores["nombre"]) ? "" : $_POST["nombre"]
+    if($_POST){
+        if(isset($errores[$campo])){
+            return "";
+        }else{
+            return $_POST[$campo];
+        }
     }
+    return "";
 }
 
 function guardarAvatar() {
@@ -99,5 +103,37 @@ function guardarAvatar() {
     // devuelvo el nombre de la imagen que armé, para guardarlo en el array del usuario
     return $nombreImagen;
 }
+
+function isLogueado(){
+    if(count($_COOKIE) != 0){
+        if(isset($_COOKIE["email"]) && isset($_COOKIE["nombre"]) && isset($_COOKIE["avatar"]) ){
+          $_SESSION["email"] = $_COOKIE["email"];
+          $_SESSION["nombre"] = $_COOKIE["nombre"];
+          $_SESSION["avatar"] = $_COOKIE["avatar"];
+        }
+      }
+    if(isset($_SESSION["nombre"]) || isset($_SESSION["email"]) || isset($_SESSION["avatar"]) ){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
+// function getInfo($dato){
+//     if(count($_COOKIE) != 0){
+//       if(isset($_COOKIE["email"]) && isset($_COOKIE["nombre"]) && isset($_COOKIE["avatar"]) ){
+//         $_SESSION["email"] = $_COOKIE["email"];
+//         $_SESSION["nombre"] = $_COOKIE["nombre"];
+//         $_SESSION["avatar"] = $_COOKIE["avatar"];
+//       }
+//     }
+    
+//     if(count($_SESSION) != 0){
+//       return $_SESSION[$dato];
+//     }else{
+//       return "";
+//     }
+//  }
 
 ?>
