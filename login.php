@@ -44,7 +44,7 @@ foreach($archivoDecodi as $usuarios => $usuario){
       }
       
    }
-   if(!$existeUsuario){
+   if(!$existeUsuario && $_POST['email'] != null){
       //SI NO EXISTE EL MAIL, REDIRIJO AL USUARIO DESPUÉS DE 3 SEGUNDOS ALA PÁGINA DE REGISTRO
       $errores['login'] = "No existe ningún registro asociado a éste mail, " . $_POST['email'] . ", por favor regístrese." ;
       header('refresh:3;url=register.php');
@@ -82,7 +82,7 @@ foreach($archivoDecodi as $usuarios => $usuario){
            
             <label for="staticEmail" class="col-sm-2 col-form-label mt-10">Email</label>
             <div class="col-sm-8 col-md-8">
-               <input type="email" class="form-control" id="staticEmail" name="email" placeholder="correo@ejemplo.com" value="">
+               <input type="email" class="form-control" id="staticEmail" name="email" placeholder="correo@ejemplo.com" value="<?=persistir("email",$errores)?>">
             </div>
          </div>
          <div class="form-group row">
