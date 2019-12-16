@@ -1,3 +1,7 @@
+<?php 
+include_once("validaciones.php");
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en" class="h-100">
 
