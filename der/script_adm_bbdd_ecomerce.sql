@@ -60,6 +60,14 @@ create table productos(
     
 );
 
+drop table carritos;
+
+create table carritos(
+	carId				int primary key not null unique,
+    carIdProducto		int not null,
+    carUsuarios_usrId	int not null,
+    foreign key (carUsuarios_usrId) references usuarios(usrId)
+);
 /*CREACIOS DE TABLA INTERMEDIA VENTAS PRODUCTOS-USUARIOS*/
 create table ventas(
 	venId			int auto_increment primary key,
