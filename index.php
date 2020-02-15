@@ -67,6 +67,17 @@ session_start();
 
             <div class="col-lg-3 col-sm-12 col-md-6 mb-4">
                <div class="card" style="width: 18rem;">
+                  <img src="./img/cateroria_vestimenta.png" class="card-img-top" alt="...">
+                  <div class="card-body">
+                     <h5 class="card-title">Vestimenta</h5>
+                     <p class="card-text">Cualquier ropa o calzado que quieras comprar</p>
+                     <a href="cat_vestimenta.php" class="btn btn-primary">Ir</a>
+                  </div>
+               </div>
+            </div>
+
+            <div class="col-lg-3 col-sm-12 col-md-6 mb-4">
+               <div class="card" style="width: 18rem;">
                   <img src="./img/cateroria_otros.png" class="card-img-top" alt="...">
                   <div class="card-body">
                      <h5 class="card-title">Otros + Servicios</h5>
@@ -78,16 +89,8 @@ session_start();
             
 
             
-            <div class="col-lg-3 col-sm-12 col-md-6 mb-4">
-               <div class="card" style="width: 18rem;">
-                  <img src="./img/cateroria_vestimenta.png" class="card-img-top" alt="...">
-                  <div class="card-body">
-                     <h5 class="card-title">Vestimenta</h5>
-                     <p class="card-text">Cualquier ropa o calzado que quieras comprar</p>
-                     <a href="cat_vestimenta.php" class="btn btn-primary">Ir</a>
-                  </div>
-               </div>
-            </div>
+            
+
          </div>
       </div>
       <!-- CARDS -->

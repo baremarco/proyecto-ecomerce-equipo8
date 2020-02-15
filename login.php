@@ -10,7 +10,6 @@ $archivoDecodi = json_decode($archivoSinDec, true);
 if(is_array($archivoDecodi)){
 foreach($archivoDecodi as $usuarios => $usuario){
    //PARA CONTROLAR SI EL MAIL ESTÁ REGISTRADO O NO
-   
    foreach($usuario as $detalle){
       //COMPARO SI EL EMAIL CORRESPONDE Y A LA VEZ SI LA PASS ES CORRECTA
       if($_POST['email'] == $detalle['email'] && password_verify($_POST['pass'], $detalle['password'])){
